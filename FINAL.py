@@ -32,7 +32,7 @@ def process_roi(roi_file_path):
 
 
 # Directory containing ROI files
-roi_directory = '/home/trinav/NormCorrePipeline/Calcium-Imaging-Pipeline/ROISet'
+roi_directory = '/home/trinav/NormCorrePipeline/Calcium-Imaging-Pipeline/RoiSet'
 
 # Process each ROI
 centroids = []
