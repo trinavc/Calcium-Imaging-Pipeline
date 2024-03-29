@@ -48,8 +48,8 @@ def main():
 
     mc.motion_correct(save_movie=True)
     m_rig = cm.load(mc.mmap_file)
-    bord_px_rig = np.ceil(np.max(mc.shifts_rig)).astype(int)
-    plt.imshow(mc.total_template_rig, cmap='gray')
+    #bord_px_rig = np.ceil(np.max(mc.shifts_rig)).astype(int)
+    #plt.imshow(mc.total_template_rig, cmap='gray')
 
     # Compute average of the motion corrected images
     average = m_rig.mean(axis=0)
