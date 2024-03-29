@@ -19,7 +19,7 @@ def main():
     logging.basicConfig(format="%(relativeCreated)12d [%(filename)s:%(funcName)20s():%(lineno)s] [%(process)d] %(message)s",
                         level=logging.DEBUG)
 
-    fnames = "/Users/trinav/Downloads/NewDataPython copy/20231017.tif"
+    fnames = "/home/trinav/NormCorrePipeline/Calcium-Imaging-Pipeline/20231017.tif"
     print(fnames)
     fnames = [fnames]     # Assuming the file exists, no need to download in this case
 
@@ -53,11 +53,11 @@ def main():
 
     # Compute average of the motion corrected images
     average = m_rig.mean(axis=0)
-    average.save('/Users/trinav/Downloads/NewDataPython/avg/avg_mc202.tif')
+    average.save('//home/trinav/NormCorrePipeline/Calcium-Imaging-Pipeline/avg_mc202.tif')
 
     # Compute Std Dev of the Motion Corrected Images
     stddev = m_rig.std(axis=0)
-    stddev.save('/Users/trinav/Downloads/NewDataPython/std/std_mc202.tif')
+    stddev.save('/home/trinav/NormCorrePipeline/Calcium-Imaging-Pipeline/std_mc202.tif')
 
     # Grouped Z 20 avg of the motion corrected images
     converted = m_rig.copy()
@@ -71,7 +71,7 @@ def main():
         else:
             images[j, :, :] = np.mean(converted[i:z, :, :], axis=0)
 
-    fname = '/Users/trinav/Downloads/NewDataPython/avg/z20avg_mc202.tif'
+    fname = '/home/trinav/NormCorrePipeline/Calcium-Imaging-Pipeline/z20avg_mc202.tif'
     tifffile.imsave(fname, images.astype(np.float32))
 
     end = time.time()

@@ -32,7 +32,7 @@ def process_roi(roi_file_path):
 
 
 # Directory containing ROI files
-roi_directory = '/Users/trinav/Downloads/NewDataPython/ROISet'
+roi_directory = '/home/trinav/NormCorrePipeline/Calcium-Imaging-Pipeline/ROISet'
 
 # Process each ROI
 centroids = []
@@ -60,7 +60,7 @@ def average_intensity(mask, frame):
     return total_intensity / count if count != 0 else 0
 
 # Path to the original TIFF stack
-tiff_stack_path = '/Users/trinav/Downloads/NewDataPython/20231017.tif'
+tiff_stack_path = '/home/trinav/NormCorrePipeline/Calcium-Imaging-Pipeline/20231017.tif'
 
 # Load the TIFF stack
 tiff_stack = tiff.imread(tiff_stack_path)
@@ -203,7 +203,7 @@ data = {
 }
 
 # Save to a .mat file
-filename = '/Users/trinav/Downloads/NewDataPython/FluorescenceData.mat'
+filename = '/home/trinav/NormCorrePipeline/Calcium-Imaging-Pipeline/FluorescenceData.mat'
 savemat(filename, data)
 
 print(f"Data saved to {filename}")
