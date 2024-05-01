@@ -26,7 +26,8 @@ def main():
     # Load the movie
     m_orig = cm.load_movie_chain(fnames)
     downsample_ratio = .2
-    m_orig.resize(1, 1, downsample_ratio).play(q_max=99.5, fr=30, magnification=2)
+    #m_orig.resize(1, 1, downsample_ratio).play(q_max=99.5, fr=30, magnification=2)
+    m_orig = m_orig.resize(1, 1, downsample_ratio)
 
     # Motion correction parameters
     max_shifts = (6, 6)
